@@ -2,59 +2,62 @@
 echo "<h1>";
 
 // while
-//$i = 1;
-//while ($i <= 10)
-//{
-//    echo $i++;
-//}
-
+/*$i = 1;
+while ($i <= 10)
+{
+    echo $i++ . '<br />';
+}
+ */
 
 // do while
-//$i = 0;
-//do
-//{
-//    echo $i;
-//}
-//while ($i > 0);
-
+/*$i = 0;
+do
+{
+    echo ++$i . '<br />';
+}
+while ($i < 5);
+ */
 
 //sprintf
-//$num = 5;
-//$location = 'дереве';
-//
-//$format = '%d обезьян сидят на %s';
-//echo sprintf($format, $num, $location);
+/*$num = 5;
+$location = 'дереве';
+
+$format = '%d обезьян сидят на %s';
+echo sprintf($format, $num, $location);
+ */
 
 
 //var_exprot
-//$a = array (1, 2, array ("a", "b", "c"));
-//var_export($a);
+/*
+$a = array (1, 2, array ("a", "b", "c"));
+var_export($a);
+ */
 
 
 // Object
-//class foo
-//{
-//    function do_foo()
-//    {
-//        echo "Doing foo.";
-//    }
-//}
-//
-//$bar = new foo;
-//$bar->do_foo();
+/*class foo
+{
+    function do_foo()
+    {
+        echo "Doing foo.";
+    }
+}
 
+$bar = new foo;
+$bar->do_foo();
+ */
 
 // Resource
 //$handle = fopen('./index.php', 'r');
 //fclose($handle);
-
+//echo __FILE__;
 
 
 
 //abs
-//echo abs(-4.2);
-//echo abs(5);
-//echo abs(-5);
+//echo abs(-4.2) . '<br />';
+//echo abs(5) . '<br />';
+//echo abs(-5) . '<br />';
 
 
 //max — Возвращает наибольшее значение
@@ -64,7 +67,7 @@ echo "<h1>";
 
 //min — Находит наименьшее значение
 //echo min(2, 3, 1, 6, 7);
-//echo min(array(2, 4, 5));
+//echo "<br />" . min(array(2, 4, 5));
 
 
 //sqrt — Квадратный корень
@@ -73,8 +76,9 @@ echo "<h1>";
 
 
 //pow — Возведение в степень
-//var_dump(pow(2, 8)); // int(256)
+//echo pow(2, 8); // int(256)
 
+//echo pow(49,1/2) . "<br />";
 
 //date
 //echo date('Y-m-d');
@@ -98,20 +102,20 @@ echo "<h1>";
 //echo strtotime("+1 week 2 days 4 hours 2 seconds"), "\n";
 //echo strtotime("next Thursday"), "\n";
 //echo strtotime("last Monday"), "\n";
-
+//echo date('Y-m-d : H-i-s', strtotime("+1 day"));
 
 //mktime   Возвращает метку времени Unix для заданной даты
-//echo date("M-d-Y", mktime(0, 0, 0, 12, 32, 1997));
-//echo date("M-d-Y", mktime(0, 0, 0, 13, 1, 1997));
+echo date("M-d-Y", mktime(0, 0, 0, 12, 03, 1997));
+//echo date("M-d-Y", mktime(0, 0, 0, 01, 1, 1997));
 //echo date("M-d-Y", mktime(0, 0, 0, 1, 1, 1998));
 //echo date("M-d-Y", mktime(0, 0, 0, 1, 1, 98));
 
 
 //time — Возвращает текущую метку времени Unix
-//$nextWeek = time() + (7 * 24 * 60 * 60);
+$nextWeek = time() + (7 * 24 * 60 * 60);
 //// 7 дней; 24 часа; 60 минут; 60 секунд
-//echo 'Сейчас:           '. date('Y-m-d') ."\n";
-//echo 'Следующая неделя: '. date('Y-m-d', $nextWeek) ."\n";
+echo 'Сейчас:           '. date('Y-m-d') ."\n";
+echo 'Следующая неделя: '. date('Y-m-d', $nextWeek) ."\n";
 
 
 // FUNCTION
