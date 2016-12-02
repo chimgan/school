@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Admin Part"
-AuthUserFile /home/vlad/Projects/school/admin/.htpasswd
-Require valid-user

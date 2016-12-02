@@ -1,6 +1,0 @@
-AuthType Basic
-AuthName "Restricted Content"
-AuthUserFile /home/vlad/Projects/school/test/.htpasswd
-Require valid-user
-
-#htpasswd -c .htpasswd admin
