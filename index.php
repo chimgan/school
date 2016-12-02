@@ -105,65 +105,77 @@ $bar->do_foo();
 //echo date('Y-m-d : H-i-s', strtotime("+1 day"));
 
 //mktime   Возвращает метку времени Unix для заданной даты
-echo date("M-d-Y", mktime(0, 0, 0, 12, 03, 1997));
+//echo date("M-d-Y", mktime(0, 0, 0, 12, 03, 1997));
 //echo date("M-d-Y", mktime(0, 0, 0, 01, 1, 1997));
 //echo date("M-d-Y", mktime(0, 0, 0, 1, 1, 1998));
 //echo date("M-d-Y", mktime(0, 0, 0, 1, 1, 98));
 
 
 //time — Возвращает текущую метку времени Unix
-$nextWeek = time() + (7 * 24 * 60 * 60);
+//$nextWeek = time() + (7 * 24 * 60 * 60);
 //// 7 дней; 24 часа; 60 минут; 60 секунд
-echo 'Сейчас:           '. date('Y-m-d') ."\n";
-echo 'Следующая неделя: '. date('Y-m-d', $nextWeek) ."\n";
+//echo 'Сейчас:           '. date('Y-m-d') ."\n";
+//echo 'Следующая неделя: '. date('Y-m-d', $nextWeek) ."\n";
 
 
 // FUNCTION
-//function foo($arg_1, $arg_2, /* ..., */ $arg_n)
-//{
-//    echo "Example function.\n";
-//    return $retval;
-//}
+/**
+ * Display firstName and secondName
+ * @param string $name
+ * @param string $secondName
+ * @return string Information about full name for some person
+ */
+function displayFullName($name, $secondName)
+{
+    $fullName = "My name is $name! <br />My secondname is $secondName!!<br /><br />";
+    return $fullName;
+}
+
+//echo displayFullName('Ivan', 'Ivanov');
+//echo displayFullName('Petr', 'Petrov');
+
 
 
 //func_num_args() — Возвращает количество аргументов, переданных функции
-//function foo()
-//{
-//    $numargs = func_num_args();
-//    echo "Количество аргументов: $numargs\n";
-//}
-//
+function foo()
+{
+    $numargs = func_num_args();
+    echo "Количество аргументов: $numargs\n";
+}
+
 //foo(1, 2, 3);
 
 
 //func_get_arg() — Возвращает элемент из списка аргументов
-//function foo()
-//{
-//    $numargs = func_num_args();
-//    echo "Количество аргументов: $numargs\n";
-//    if ($numargs >= 2) {
-//        echo "Второй аргумент: " . func_get_arg(1) . "\n";
-//    }
-//}
-//
-//foo(1, 2, 3);
+function foo1()
+{
+    $numargs = func_num_args();
+    echo "Количество аргументов: $numargs\n";
+    if ($numargs >= 2) {
+        echo "Второй аргумент: " . func_get_arg(1) . "\n";
+    }
+}
+
+//foo1(1, 21, 3);
 
 
 //func_get_args() — Возвращает массив, содержащий аргументы функции
-//function foo()
-//{
-//    $numargs = func_num_args();
-//    echo "Количество аргументов: $numargs\n";
-//    if ($numargs >= 2) {
-//        echo "Второй аргумент: " . func_get_arg(1) . "\n";
-//    }
-//    $arg_list = func_get_args();
-//    for ($i = 0; $i < $numargs; $i++) {
-//        echo "Аргумент №$i: " . $arg_list[$i] . "\n";
-//    }
-//}
-//
-//foo(1, 2, 3);
+function foo2()
+{
+    $numargs = func_num_args();
+    echo "Количество аргументов: $numargs<br />";
+    if ($numargs >= 2) 
+    {
+        echo "Второй аргумент: " . func_get_arg(1) . "<br />";
+    }
+    $arg_list = func_get_args();
+    for ($i = 0; $i < $numargs; $i++) 
+    {
+        echo "Аргумент №$i: " . $arg_list[$i] . "<br />";
+    }
+}
+
+foo2(11, 21, 31);
 
 
 echo "</h1>";
