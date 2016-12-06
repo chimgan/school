@@ -2,10 +2,6 @@
 echo "<h1>";
 
 $weather = "bad";
-/*
-==
-!=
- */
 
 if (true XOR true)
 {
