@@ -1,2 +1,2 @@
-Здравствуйте, <?php echo htmlspecialchars($_POST['name']); ?>.
-Вам <?php echo (int)$_POST['age']; ?> лет.
+Здравствуйте, <?= htmlspecialchars($_POST['name']); ?>.
+Вам <?= (int)$_POST['age']; ?> лет.

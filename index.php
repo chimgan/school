@@ -1,11 +1,11 @@
 <?php
 echo "<h1>";
 
-//echo intval(42);                      // 42
-//echo intval(4.2);                     // 4
-//echo intval('42');                    // 42
-//echo intval('+42');                   // 42
-//echo intval('-42');                   // -42
+//echo intval(42)."<br />";                      // 42
+//echo intval(4.2)."<br />";                     // 4
+//echo intval('42')."<br />";                    // 42
+//echo intval('+42')."<br />";                   // 42
+//echo intval('-42')."<br />";                   // -42
 
 
 //$var = '122.34343The';
@@ -14,19 +14,28 @@ echo "<h1>";
 
 
 //$foo = "5bar"; // строка
-//$bar = true;   // булевое значение
+//$bar = false;   // булевое значение
 //settype($foo, "integer"); // $foo теперь 5   (целое)
 //settype($bar, "string");  // $bar теперь "1" (строка)
-
+//echo $bar;
+//echo gettype($bar);
 
 //$a    = 'car'; // $a - это строка
 //$a[0] = 'b';   // $a все еще строка
 //echo $a;       // bar
-
+//foreach ($a as $value)
+//{
+//    echo $value . "<br />";
+//}
 
 //$foo = 10;   // $foo это целое число
 //$bar = (boolean) $foo;   // $bar это булев тип
+//var_dump($bar);
 
+//$var = 1;
+//echo $var;
+//unset($var);
+//echo $var;
 
 //function foo(&$bar)
 //{
@@ -34,10 +43,10 @@ echo "<h1>";
 //    $bar = "blah";
 //}
 //$bar = 'something';
-//echo "$bar\n";
+//echo "$bar<br />";
 //foo($bar);
-//echo "$bar\n";
-
+//echo "$bar<br />";
+//
 
 // Some information about git
 //https://git-scm.com/book/ru/v1/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%9E-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%B5-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B9
@@ -48,22 +57,20 @@ echo "<h1>";
 
 //$new = htmlspecialchars("<a href='test'>Test</a>", ENT_QUOTES);
 //echo $new; // &lt;a href=&#039;test&#039;&gt;Test&lt;/a&gt;
-
+//echo '<br />';
 
 //$str = "<p>this -&gt; &quot;</p>\n";
-//echo htmlspecialchars_decode($str);
+//echo htmlspecialchars_decode($new, ENT_QUOTES);
 
 
-//$form = <<<FORM
-//<form action="action.php" method="post">
-// <p>Ваше имя: <input type="text" name="name" /></p>
-// <p>Ваш возраст: <input type="text" name="age" /></p>
-// <p><input type="submit" /></p>
-//</form>
-//FORM;
-//
-//echo $form;
-
+$form = <<<FORM
+<form action="action.php" method="post">
+ <p>Ваше имя:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="name" /></p>
+ <p>Ваш возраст: <input type="text" name="age" /></p>
+ <p><input type="submit" /></p>
+</form>
+FORM;
+echo $form;
 
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! String function !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -71,5 +78,13 @@ echo "<h1>";
 //echo nl2br("foo - это вам не\n bar");
 
 
+$homeWork = <<<html
+1) Вывести дату своего рождения в 3х форматах;
+2) Написать калькулятор используя формы (использовать проверки для неверно заданных 
+   значений и возвращать ошибки на исправление). Интерфейс построить с использованием бутстрап библиотеки;
+3) Грамотно поместить все в гит пулреквестом;
+html;
+
+//echo $homeWork;
 
 echo "</h1>";
