@@ -1,4 +1,5 @@
 <?php
+//$_GET
 $errors = [];
 if (isset($_POST['name'])) {
 	$name = $_POST['name'];
