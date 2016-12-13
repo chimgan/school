@@ -1,15 +1,19 @@
 <?php
+include "var.php";
 echo "<h1>";
+
+//echo $testVar;
+
 
 //Массивы Основы
 //Суперглобальные массивы
-//$GLOBALS
-//$_SERVER
+//var_dump($GLOBALS);
+//var_dump($_SERVER);
 //$_GET
 //$_POST
 //$_FILES
 $form = <<<html
-<form enctype="multipart/form-data" action="__URL__" method="POST">
+<form enctype="multipart/form-data" action="index.php" method="POST">
     <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
     <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
     <!-- Название элемента input определяет имя в массиве \$_FILES -->
@@ -45,10 +49,13 @@ html;
 // Пример использования getenv()
 //$uniqId = 12345;
 //putenv("UNIQID=$uniqId");
-//
+
 //$ip = getenv('REMOTE_ADDR');
 //$uniqId = getenv('UNIQID');
-//echo $uniqId;
+//echo $uniqId . '<br />';
+//echo $ip;
+
+//var_dump($_ENV);
 
 
 //Функции работы с массивами
@@ -56,21 +63,30 @@ html;
 //Поиск в массиве
 //Слияние и разделение массивов
 
-//$array = array(1, "hello", 1, "world", "hello");
+//$array = [1, "hello", 1, "world", "hello"];
 //print_r(array_count_values($array));
 
+// Функция подсчета лементов значения в массиве
+//print_r(count($array));
+//print_r(sizeof($array));
 
-//$search_array = array('first' => 1, 'second' => 4);
-//if (array_key_exists('first', $search_array)) {
+
+//$search_array = [
+//	'first' => 1, 
+//	'second' => 4
+//];
+//if (array_key_exists('first1', $search_array)) {
 //    echo "Массив содержит элемент 'first'.";
+//}else{
+//    echo "Массив не содержит заданного ключа";
 //}
 
 
 //$os = array("Mac", "NT", "Irix", "Linux");
-//if (in_array("Irix", $os)) {
+//if (in_array("irix", $os)) {
 //    echo "Нашел Irix";
 //}
-//if (in_array("mac", $os)) {
+//if (in_array("Mac", $os)) {
 //    echo "Нашел mac";
 //}
 
@@ -88,17 +104,20 @@ html;
 //    return($n * $n * $n);
 //}
 //$a = array(1, 2, 3, 4, 5);
-//$b = array_map("cube", $a);
+//$b = array_map(function($value){
+//    return $value * $value;
+//}, $a);
 //print_r($b);
 
 
 //$array = array(0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red');
 //$key = array_search('green', $array); // $key = 2;
-//$key = array_search('red', $array);   // $key = 1;
+//echo $key . "<br />";
+//$key = array_search('red1', $array);   // $key = 1;
+//var_dump($key) . "<br />";
 
-
-//$array1 = array("color" => "red", 2, 4);
-//$array2 = array("a", "b", "color" => "green", "shape" => "trapezoid", 4);
+//$array1 = array("color" => "red", 0 => 2, 4);
+//$array2 = array(0 => "a", "b", "color" => "green", "shape" => "trapezoid", 4);
 //$result = array_merge($array1, $array2);
 //print_r($result);
 
@@ -111,23 +130,24 @@ html;
 
 
 //$input = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
-//$rand_keys = array_rand($input, 2);
+//$rand_keys = array_rand($input, 4);
+//print_r($rand_keys);
 //echo $input[$rand_keys[0]] . "\n";
 //echo $input[$rand_keys[1]] . "\n";
 
 
-//$numbers = range(1, 20);
+//$numbers = range(10, 20);
 //shuffle($numbers);
 //foreach ($numbers as $number) {
-//    echo "$number ";
+//    echo "$number <br />";
 //}
 
 
 //$fruits = array("lemon", "orange", "banana", "apple");
-//sort($fruits);
+//asort($fruits);
 //foreach ($fruits as $key => $val)
 //{
-//    echo "fruits[" . $key . "] = " . $val . "\n";
+//    echo "fruits[" . $key . "] = " . $val . "<br />";
 //}
 
 
@@ -138,13 +158,13 @@ html;
 //    }
 //    return ($a < $b) ? -1 : 1;
 //}
-//
+
 //$a = array(3, 2, 5, 6, 1);
-//
+
 //usort($a, "cmp");
-//
+
 //foreach ($a as $key => $value) {
-//    echo "$key: $value\n";
+//    echo "$value <br />";
 //}
 
 
