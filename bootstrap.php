@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 

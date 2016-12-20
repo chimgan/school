@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)http://getbootstrap.com/examples/dashboard/ -->
+<!-- saved from url=(0043)http://school.local/dashboard.php/ -->
 <html lang="en">
-<script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -39,20 +38,14 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://getbootstrap.com/examples/dashboard/#">Project name</a>
+            <a class="navbar-brand" href="http://school.local/dashboard.php">Project name</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://getbootstrap.com/examples/dashboard/#">Dashboard</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/#">Settings</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/#">Profile</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/#">Help</a></li>
+                <li><a href="http://school.local/dashboard.php">Dashboard</a></li>
+                <li><a href="http://school.local/dashboard.php">Settings</a></li>
+                <li><a href="http://school.local/dashboard.php">Profile</a></li>
+                <li><a href="http://school.local/dashboard.php">Help</a></li>
             </ul>
             <form class="navbar-form navbar-right">
                 <input type="text" class="form-control" placeholder="Search...">
@@ -65,22 +58,22 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="http://getbootstrap.com/examples/dashboard/#">Overview <span class="sr-only">(current)</span></a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/#">Reports</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/#">Analytics</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/#">Export</a></li>
+                <li class="active"><a href="http://school.local/dashboard.php">Overview <span class="sr-only">(current)</span></a></li>
+                <li><a href="http://school.local/dashboard.php">Reports</a></li>
+                <li><a href="http://school.local/dashboard.php">Analytics</a></li>
+                <li><a href="http://school.local/dashboard.php">Export</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="http://getbootstrap.com/examples/dashboard/">Nav item</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/">Nav item again</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/">One more nav</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/">Another nav item</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/">More navigation</a></li>
+                <li><a href="http://school.local/dashboard.php/">Nav item</a></li>
+                <li><a href="http://school.local/dashboard.php/">Nav item again</a></li>
+                <li><a href="http://school.local/dashboard.php/">One more nav</a></li>
+                <li><a href="http://school.local/dashboard.php/">Another nav item</a></li>
+                <li><a href="http://school.local/dashboard.php/">More navigation</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="http://getbootstrap.com/examples/dashboard/">Nav item again</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/">One more nav</a></li>
-                <li><a href="http://getbootstrap.com/examples/dashboard/">Another nav item</a></li>
+                <li><a href="http://school.local/dashboard.php/">Nav item again</a></li>
+                <li><a href="http://school.local/dashboard.php/">One more nav</a></li>
+                <li><a href="http://school.local/dashboard.php/">Another nav item</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -245,7 +238,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="./assets/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="./assets/jquery.min.js"><\/script>')</script>
 <script src="./assets/bootstrap.min.js"></script>
 <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
 <script src="./assets/holder.min.js"></script>
