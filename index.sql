@@ -6,7 +6,7 @@ GRANT ALL PRIVILEGES ON `test` . * TO 'demo'@'localhost';
 
 FLUSH PRIVILEGES;
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `age` INT(3) NOT NULL,
