@@ -10,6 +10,4 @@ if (!$link)
 echo 'Успешно соединились';
 mysqli_close($link);
 
-
-
 echo "</h1>";
