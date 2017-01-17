@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once 'checker.php';
 ?>
 
 <?
@@ -81,9 +81,7 @@ session_start();
 
     if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])) {
         if ($_POST['username'] == 'vlad' && $_POST['password'] == '12345') {
-            $_SESSION['valid'] = true;
-            $_SESSION['timeout'] = time();
-            $_SESSION['username'] = 'vlad';
+            $_SESSION['user_access'] = true;
             echo '<h1>You have entered valid use name and password</h1>';
             header('Refresh: 5; URL = page.php');
         } else {
