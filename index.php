@@ -1,29 +1,44 @@
-<meta charset="UTF-8">
 <?php
-echo "<h1>";
+if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])
+    && !empty($_SERVER['HTTP_X_REQUESTED_WITH'])
+    && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
+{
 
-//$link = mysqli_connect('localhost', 'root', 'password', 'test');
-//if (!$link)
-//{
-//    die('Ошибка соединения: ' . mysqli_error($link));
-//}
+
 //echo 'Успешно соединились<br /><br />';
 //
 //$sqlQuery = "SELECT `id`, `name` FROM `author`";
 //$result = mysqli_query($link, $sqlQuery);
-//while ($row = mysqli_fetch_array($result, MYSQLI_NUM))
-//{
-//    printf("ID: %s  <br />Имя: %s<br /><br />", $row[0], $row[1]);
-//}
-//
-//mysqli_free_result($result);
-//mysqli_close($link);
+    $connection = mysqli_connect('localhost', 'root', 'password', 'test');
 
-//$value = 'sometext';
-//
-//setcookie("testCookie", $value);
-//setcookie("testCookie", $value, time() + 60*60);  /* срок действия 1 час */
-//
-//echo $_COOKIE["testCookie"];
+    if (mysqli_connect_errno())
+    {
+        printf("Connect failed: %s\n", mysqli_connect_error());
+        exit();
+    }
+//    $db = mysqli_select_db("test", $connection); // Selecting Database
 
-echo "</h1>";
+    //Fetching Values from URL
+    $name2     = htmlentities($_POST['name1']);
+    $email2    = htmlentities($_POST['email1']);
+    $password2 = htmlentities($_POST['password1']);
+    $contact2  = htmlentities($_POST['contact1']);
+
+    //Insert query
+    $query = "INSERT INTO form_element(name, email, password, contact) VALUES ('$name2', '$email2', '$password2','$contact2')";
+    mysqli_query($connection, $query);
+
+    $successText =  "Form Submitted Succesfully";
+    echo $successText;
+
+//    header('Content-Type: application/json');
+//    echo json_encode(['resultString' => $successText . ' with JSON']);
+
+    //mysqli_free_result($connection); // Free results
+    mysqli_close($connection); // Connection Closed
+
+}
+else
+{
+    echo "<h1>Warning: This script just for AJAX requests!</h1>";
+}
