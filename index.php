@@ -25,18 +25,28 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])
     $contact2  = htmlentities($_POST['contact1']);
 
     //Insert query
-    $query = "INSERT INTO form_element(name, email, password, contact) VALUES ('$name2', '$email2', '$password2','$contact2')";
-    mysqli_query($connection, $query);
+    $query = "INSERT INTO form_element(name, email, password, contact) 
+              VALUES ('$name2', '$email2', '$password2','$contact2')";
 
-    $successText =  "Form Submitted Succesfully";
-    echo $successText;
+    $result = mysqli_query($connection, $query);
 
-//    header('Content-Type: application/json');
-//    echo json_encode(['resultString' => $successText . ' with JSON']);
+    if ($result)
+    {
+        $answer =  "Form Submitted Succesfully";
+    }
+    else
+    {
+        $answer =  "Form Submitted With Errors";
+    }
+
+
+//    echo $answer;
+
+    header('Content-Type: application/json');
+    echo json_encode(['resultString' => $answer . ' with JSON']);
 
     //mysqli_free_result($connection); // Free results
     mysqli_close($connection); // Connection Closed
-
 }
 else
 {
