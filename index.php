@@ -1,66 +1,169 @@
 <?php
-//namespace School\Base;
-//
-//use DateTime;
-//use Exception;
+namespace School\Base;
 
-class SimpleClass
+use DateTime;
+use Exception;
+
+$connect = NULL;
+$database = 'Mysqly';
+$host     = 'localhost';
+$user     = 'root';
+$password = 'password';
+$dbName   = 'test';
+
+if (in_array($database, db::$connector))
 {
-    /**
-     * Initial property
-     * @var string $var
-     */
-    public $var = 'default value';
-
-    /**
-     * Initial const
-     */
-    const INTEGER_CONST = 1;
-
-    /**
-     * initial method
-     */
-    public function displayVar()
+    try
     {
-        echo $this->var;
+        /** @var Mysqly $db */
+        $db = new $database($host, $user, $password, $dbName);
+        $connect = $db->connect();
+    }
+    catch (Exception $exception)
+    {
+        echo 'Some Exception: ',  $exception->getMessage(), "<br />";
     }
 }
 
-//class Test
+/**
+ * Class db
+ * @package School\Base
+ */
+class db
+{
+    /**
+     * @var string $host
+     */
+    protected $host;
+
+    /**
+     * @var string $user
+     */
+    protected $user;
+    protected $password;
+    protected $dbName;
+
+    static $connection;
+
+    static $connector = [
+        'Mysql',
+    ];
+
+    /**
+     * db constructor.
+     * @param $host
+     * @param $user
+     * @param $password
+     * @param $dbName
+     */
+    public function __construct($host, $user, $password, $dbName)
+    {
+        $this->host     = $host;
+        $this->user     = $user;
+        $this->password = $password;
+        $this->dbName   = $dbName;
+    }
+
+    /**
+     * Get DB connection
+     */
+    public function connect()
+    {
+
+    }
+}
+
+class Mysqly extends db
+{
+    /**
+     * Get DB connection
+     */
+    public function connect()
+    {
+        self::$connection = mysqli_connect(
+            $this->host,
+            $this->user,
+            $this->password,
+            $this->dbName
+        );
+        return self::$connection;
+    }
+}
+
+///**
+// * Class SimpleClass
+// */
+//class SimpleClass
+//{
+//    /**
+//     * Initial property
+//     * @var string $variable
+//     */
+//    public $variable;
+//
+//    /**
+//     * Initial const
+//     */
+//    const INTEGER_CONST = 1;
+//
+//    /**
+//     * SimpleClass constructor.
+//     * @param string $variable
+//     */
+//    public function __construct($variable = '')
+//    {
+//        $this->variable = $variable;
+//    }
+//
+//    /**
+//     * initial method
+//     */
+//    public function displayVariable()
+//    {
+//        echo $this->variable . $this->getSomeString() . self::INTEGER_CONST;
+//    }
+//
+//    /**
+//     * Get some plain text for display
+//     * @return string
+//     */
+//    private function getSomeString()
+//    {
+//        return ' $$$';
+//    }
+//}
+
+//class Parents
 //{
 //    static public function getYear()
 //    {
 //        return (new DateTime())->format('Y');
 //    }
-//}
 //
-//class Child extends Test
-//{
+//    public function getAge()
+//    {
 //
-//}
-//
-//$connect = NULL;
-//$database = 'Mysql';
-//$host     = 'localhost';
-//$user     = 'root';
-//$password = 'password';
-//$dbName   = 'test';
-//if (in_array($database, \School\Base\db::$connector))
-//{
-//    try {
-//        $connect = new $database($host, $user, $password, $dbName);
-//    } catch (Exception $exception) {
-//        echo 'Some Exception: ',  $exception->getMessage(), "<br />";
 //    }
 //}
-//var_dump($connect);
-//var_dump(\School\Base\Mysql::$connection);
+//
+//class Childrens extends Parents
+//{
+//    public function getAge()
+//    {
+//        parent::getAge();
+//    }
+//}
 
 echo "<h1>";
-$class = new SimpleClass;
-$class->displayVar();
+//$class = new SimpleClass('default value');
+//$class->displayVariable();
+//$class->variable = '<br />Another value';
+//$class->displayVariable();
+//
 //$className = 'SimpleClass';
-//$instance = new $className(); // new SimpleClass()
-//$instance->displayVar();
+//$instance = new $className('<br />Dynamic class'); // new SimpleClass()
+//$instance->displayVariable();
+var_dump($connect);
+//var_dump(Mysqly::$connection);
 echo "</h1>";
 
