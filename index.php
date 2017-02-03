@@ -1,12 +1,15 @@
 <?php
-//final class BaseClass {
+echo "<h1>";
+//final class BaseClass
+//{
 //    public function myMethod() {
 //        echo "BaseClass method called";
 //    }
 //}
 //
 ////this will cause Compile error
-//class DerivedClass extends BaseClass {
+//class DerivedClass extends BaseClass
+//{
 //    public function myMethod() {
 //        echo "DerivedClass method called";
 //    }
@@ -29,7 +32,7 @@
 //    }
 //}
 //
-//$c = new DerivedClass();
+//$c = new DerivedClass;
 //$c->myMethod();
 
 
@@ -70,13 +73,13 @@
 //}
 //
 //$class1 = new ConcreteClass1;
-//$class1->printOut();
+//$class1->printOut();echo "<br />";
 //echo $class1->prefixValue('FOO_') ."\n";
-//
+//echo "<br />";echo "<br />";
 //$class2 = new ConcreteClass2;
-//$class2->printOut();
+//$class2->printOut();echo "<br />";
 //echo $class2->prefixValue('FOO_') ."\n";
-
+//echo "<br />";
 
 //abstract class AbstractClass
 //{
@@ -136,11 +139,11 @@
 //    }
 //}
 //
-//// Это не будет работать
-//// Fatal error: Class BadTemplate contains 1 abstract methods
-//// and must therefore be declared abstract (iTemplate::getHtml)
-//// (Фатальная ошибка: Класс BadTemplate содержит 1 абстрактный метод
-//// и поэтому должнен быть объявлен абстрактным (iTemplate::getHtml))
+////// Это не будет работать
+////// Fatal error: Class BadTemplate contains 1 abstract methods
+////// and must therefore be declared abstract (iTemplate::getHtml)
+////// (Фатальная ошибка: Класс BadTemplate содержит 1 абстрактный метод
+////// и поэтому должнен быть объявлен абстрактным (iTemplate::getHtml))
 //class BadTemplate implements iTemplate
 //{
 //    private $vars = array();
@@ -221,7 +224,7 @@
 //class MyHelloWorld {
 //    use Hello, World;
 //    public function sayExclamationMark() {
-//        echo '!';
+//        echo '!!!';
 //    }
 //}
 //
@@ -262,7 +265,7 @@
 //sudo mv composer.phar /usr/local/bin/composer
 //composer global require "laravel/installer"
 //composer create-project --prefer-dist laravel/laravel myTestProject
-#.bashrc
+//#.bashrc
 //export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 //source .bashrc
 
