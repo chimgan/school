@@ -15,12 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('start', 'StartController@start');
+Route::get('start/{id}', 'StartController@item');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Auth::routes();
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+Route::get('/home', 'HomeController@index');
+
