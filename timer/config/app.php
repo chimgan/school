@@ -181,6 +181,8 @@ return [
         TCG\Voyager\VoyagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
+        EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider::class,
+
     ],
 
     /*
