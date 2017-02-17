@@ -36,7 +36,7 @@ class TaskController extends Controller
             return $this->response->errorNotFound('Task Not Found');
         }
         // Return a single task
-        return $this->response->withItem($task, new  TaskTransformer());
+        return $this->response->withItem($task, new TaskTransformer());
     }
 
     public function destroy($id)
@@ -48,7 +48,7 @@ class TaskController extends Controller
         }
 
         if($task->delete()) {
-            return $this->response->withItem($task, new  TaskTransformer());
+            return $this->response->withItem($task, new TaskTransformer());
         } else {
             return $this->response->errorInternalError('Could not delete a task');
         }

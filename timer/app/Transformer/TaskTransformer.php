@@ -5,8 +5,8 @@ namespace App\Transformer;
  * Class TaskTransformer
  * @package App\Transformer
  */
-class TaskTransformer {
-
+class TaskTransformer
+{
     public function transform($task) {
         return [
             'id' => $task->id,
@@ -14,5 +14,4 @@ class TaskTransformer {
             'task_description' => $task->description
         ];
     }
-
 }
