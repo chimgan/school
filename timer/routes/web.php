@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('start', 'StartController@start');
+
+Route::get('shops', 'ShopController@index');
+Route::get('shopitems/{id}', 'ShopController@shopitems');
+Route::get('items', 'ShopController@items');
+
 Route::get('start/{id}', 'StartController@item');
 
 Route::group(['prefix' => 'admin'], function () {

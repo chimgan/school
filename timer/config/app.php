@@ -182,6 +182,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
 
         EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider::class,
+        Laracasts\Generators\GeneratorsServiceProvider::class,
 
     ],
 
