@@ -9,104 +9,265 @@
     <schema id="3" parent="1" name="information_schema"/>
     <schema id="4" parent="1" name="mysql"/>
     <schema id="5" parent="1" name="performance_schema"/>
-    <schema id="6" parent="1" name="bets"/>
-    <schema id="7" parent="1" name="profizorro"/>
-    <table id="8" parent="2" name="author"/>
-    <table id="9" parent="2" name="books"/>
-    <table id="10" parent="2" name="form_element"/>
-    <table id="11" parent="2" name="users"/>
-    <column id="12" parent="8" name="id">
-      <Position>1</Position>
-      <DataType>int(10)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="13" parent="8" name="name">
-      <Position>2</Position>
-      <DataType>varchar(200)|0</DataType>
-    </column>
-    <column id="14" parent="8" name="fam">
-      <Position>3</Position>
-      <DataType>varchar(200)|0</DataType>
-    </column>
-    <column id="15" parent="8" name="birthday">
-      <Position>4</Position>
-      <DataType>date|0</DataType>
-    </column>
-    <key id="16" parent="8" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
+    <schema id="6" parent="1" name="profizorro"/>
+    <schema id="7" parent="1" name="lauth"/>
+    <schema id="8" parent="1" name="timer"/>
+    <table id="9" parent="2" name="files"/>
+    <table id="10" parent="2" name="migrations"/>
+    <table id="11" parent="2" name="password_resets"/>
+    <table id="12" parent="2" name="product_shop"/>
+    <table id="13" parent="2" name="products"/>
+    <table id="14" parent="2" name="shops"/>
+    <table id="15" parent="2" name="tasks"/>
+    <table id="16" parent="2" name="users"/>
     <column id="17" parent="9" name="id">
       <Position>1</Position>
-      <DataType>int(10)|0</DataType>
+      <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="18" parent="9" name="id_author">
+    <column id="18" parent="9" name="title">
       <Position>2</Position>
-      <DataType>int(10)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="19" parent="9" name="book">
+    <column id="19" parent="9" name="pref">
       <Position>3</Position>
-      <DataType>varchar(500)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
     </column>
-    <index id="20" parent="9" name="id_author">
-      <ColNames>id_author</ColNames>
-    </index>
-    <key id="21" parent="9" name="PRIMARY">
+    <column id="20" parent="9" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="21" parent="9" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <key id="22" parent="9" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="22" parent="10" name="id">
+    <column id="23" parent="10" name="id">
       <Position>1</Position>
-      <DataType>int(10)|0</DataType>
+      <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="23" parent="10" name="name">
+    <column id="24" parent="10" name="migration">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="10" name="email">
+    <column id="25" parent="10" name="batch">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="26" parent="10" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="11" name="email">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="11" name="token">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="11" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="30" parent="11" name="password_resets_email_index">
+      <ColNames>email</ColNames>
+    </index>
+    <index id="31" parent="11" name="password_resets_token_index">
+      <ColNames>token</ColNames>
+    </index>
+    <column id="32" parent="12" name="product_id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="12" name="shop_id">
+      <Position>2</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="34" parent="12" name="product_shop_product_id_index">
+      <ColNames>product_id</ColNames>
+    </index>
+    <index id="35" parent="12" name="product_shop_shop_id_index">
+      <ColNames>shop_id</ColNames>
+    </index>
+    <key id="36" parent="12" name="PRIMARY">
+      <ColNames>product_id
+shop_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="12" name="product_shop_product_id_foreign">
+      <ColNames>product_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>products</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <foreign-key id="38" parent="12" name="product_shop_shop_id_foreign">
+      <ColNames>shop_id</ColNames>
+      <RefSchemaName>test</RefSchemaName>
+      <RefTableName>shops</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
+    <column id="39" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="13" name="code">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="13" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="43" parent="13" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <key id="44" parent="13" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="14" name="title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="14" name="address">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="10" name="password">
+    <column id="48" parent="14" name="email">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="10" name="contact">
+    <column id="49" parent="14" name="created_at">
       <Position>5</Position>
-      <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
+      <DataType>timestamp|0</DataType>
     </column>
-    <key id="27" parent="10" name="PRIMARY">
+    <column id="50" parent="14" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="51" parent="14" name="shops_email_unique">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="14" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="28" parent="11" name="id">
+    <key id="53" parent="14" name="shops_email_unique">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>shops_email_unique</UnderlyingIndexName>
+    </key>
+    <column id="54" parent="15" name="id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="29" parent="11" name="name">
+    <column id="55" parent="15" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="11" name="age">
+    <column id="56" parent="15" name="description">
       <Position>3</Position>
-      <DataType>int(3)|0</DataType>
+      <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="31" parent="11" name="PRIMARY">
+    <column id="57" parent="15" name="user_id">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="15" name="created_at">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="59" parent="15" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <key id="60" parent="15" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
+    </key>
+    <column id="61" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="62" parent="16" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="16" name="email">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="16" name="password">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="16" name="remember_token">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="66" parent="16" name="created_at">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="67" parent="16" name="updated_at">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <index id="68" parent="16" name="users_email_unique">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="69" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="70" parent="16" name="users_email_unique">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
