@@ -1,268 +1,243 @@
 <?php
 echo "<h1>";
 
-//$variable = 23;
-//
-//testFunction();
-//
-//function testFunction()
-//{
-//    global $variable;
-//
-//    echo $variable;
-//    $variable = 33;
-//}
-//echo $variable;
+//echo intval(42)."<br />";                      // 42
+//echo intval(4.2)."<br />";                     // 4
+//echo intval('42')."<br />";                    // 42
+//echo intval('+42')."<br />";                   // 42
+//echo intval('-42')."<br />";                   // -42
+//echo (integer)'11a '."<br />";                   // -42
 
-//$symbol = '+/';
-//switch ($symbol)
+//$var = '122.34343The';
+//$float_value_of_var = floatval($var);
+//echo $float_value_of_var; // 122.34343
+
+//$foo = "5bar"; // строка
+//$bar = false;   // булевое значение
+//settype($foo, "integer"); // $foo теперь 5   (целое)
+//settype($bar, "string");  // $bar теперь "1" (строка)
+//settype($bar, "boolean");  // $bar теперь "1" (строка)
+//var_dump($bar);
+//echo gettype($bar);
+
+//$a    = 'car bar'; // $a - это строка
+//$a[4] = 'c';   // $a все еще строка
+//echo $a;       // bar
+//for ($i = 0; $i < strlen($a); $i++)
 //{
-//    case '-':
-//        echo '--';
-//        break;
-//    case '+':
-//        echo '++';
-//        break;
-//    default:
-//        echo "Unknow symbol";
-//        break;
+//    echo $a[$i] . "<br />";
+//}
+// Не будет работать так как не массив
+//foreach ($a as $value)
+//{
+//    echo $value . "<br />";
 //}
 
-// while
-/*
-$i = 1;
-while ($i <= 10)
-{
-    echo $i++ . '<br />';
-}
-*/
+//$foo = 10;   // $foo это целое число
+//$bar = (boolean) $foo;   // $bar это булев тип
+//var_dump($bar);
+//$var = 1;
+//echo $var;
+//unset($var);
+//$var = 12;
+//echo $var;
 
-// do while
-//$i = 10;
-//do
+//function variableChanger(&$arg1, $arg2 = '')
 //{
-//    echo ++$i . '<br />';
+//    unset($arg1);
+//    $arg1 = "blah";
 //}
-//while ($i < 5);
+//
+//$blackJack = 'something';
+//echo "$blackJack<br />";
+//variableChanger($blackJack);
+//echo "$blackJack<br />";
+
+
+// Some information about git
+//https://git-scm.com/book/ru/v1/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%9E-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%B5-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B9
+//https://camo.githubusercontent.com/f2a574f39c54fec927c020221af0fced76f0e7db/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f317238334b3634544643744239386d424747463964324b5056656b556e6d6979396562665675676a726378302f7075623f773d36303626683d323930
+//git log --oneline --decorate --all --graph
+//git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+
+
+//$string = "<a href='test'>Test</a>";
+//$new = htmlspecialchars($string, ENT_QUOTES);
+//echo $new; // &lt;a href=&#039;test&#039;&gt;Test&lt;/a&gt;
+//echo '<br />';
+//$str = "<p>this -&gt; &quot;</p>\n";
+//echo htmlspecialchars_decode($str, ENT_QUOTES);
+
+
+//$form = <<<FORM
+//<form action="index.php" method="post">
+// <p>Ваше имя:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="name" placeholder="123" /></p>
+// <p>Ваш возраст: <input type="text" name="age" /></p>
+// <p><input type="submit" /></p>
+//</form>
+//FORM;
+//echo $form;
+
+//$array = [1,2,3,4,5];
+//var_dump(in_array(7, $array));
+
+
+
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! String function !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//echo "foo - это вам не\n bar" . "<br />";
+//echo nl2br("foo - это вам не\n bar");
+
+//$str = "Ваше имя O'Reilly?";
+//$str = 'Ваше имя O"Reilly?';
+// выводит: Ваше имя O\'Reilly?
+//echo addslashes($str).'<br />';
+//echo stripslashes($str);
+
+
+//$pizza  = "кусок1 кусок2 кусок3 кусок4 кусок5 кусок6";
+//$pieces = explode(" ", $pizza);
+//echo $pieces[0].'<br />'; // кусок1
+//echo $pieces[1]; // кусок2
+//var_dump($pieces);
 
 
 $array = [
-    'drink' => 'bear',
-    'fast'  => 'fish',
-    'food'  => 'cheeps'
+    'имя',
+    'почта',
+    'телефон'
 ];
+//$comma_separated = implode("# ", $array);
+//echo $comma_separated; // имя,почта,телефон
 
-foreach ($array as $key => $value)
-{
-//    echo "{$key} => {$value} {$array['drink']}<br />";
-}
-
-//for ($i = 0; $i < count($array); $i++)
+//function trim_value(&$value)
 //{
-//    echo $array[$i] . '<br />';
-//}
-
-//$stringForPrint = "Display me";
-//var_dump(true);
-
-//sprintf
-//$num = 5;
-//$location = 'дереве';
-//$format = '%d обезьян сидят на %s';
-//echo sprintf($format, $num, $location);
-
-//var_exprot
-/*
-$a = array (1, 2, array ("a", "b", "c"));
-var_export($a);
- */
-// Object
-/*class foo
-{
-    function do_foo()
-    {
-        echo "Doing foo.";
-    }
-}
-$bar = new foo;
-$bar->do_foo();
- */
-// Resource
-//$handle = fopen('./index.php', 'r');
-//fclose($handle);
-//echo __FILE__;
-
-//abs
-//echo abs(-4.2) . '<br />';
-//echo abs(5) . '<br />';
-//echo abs(-5) . '<br />';
-
-//max — Возвращает наибольшее значение
-//echo max(1, 3, 5, 6, 7);
-//echo "<br />";
-//echo max(array(2, 4, 5));
-//min — Находит наименьшее значение
-//echo min(2, 3, 1, 6, 7);
-//echo "<br />" . min(array(4, 2, 5));
-
-//sqrt — Квадратный корень
-//echo sqrt(9); echo "<br />";
-//echo sqrt(10);
-
-//pow — Возведение в степень
-//echo pow(2, 8) . "<br />"; // int(256)
-//echo pow(49,1/2) . "<br />";
-
-//date
-//echo date('Y-m-d H:i:s', strtotime("+1 day"));
-//echo date("F j, Y, g:i a");                 // March 10, 2001, 5:16 pm
-//echo date("m.d.y");                         // 03.10.01
-//echo date("j, n, Y");                       // 10, 3, 2001
-//echo date("Ymd");                           // 20010310
-//echo date('h-i-s, j-m-y, it is w Day');     // 05-16-18, 10-03-01, 1631 1618 6 Satpm01
-//echo date('\i\t \i\s \t\h\e jS \d\a\y.');   // it is the 10th day.
-//echo date("D M j G:i:s T Y");               // Sat Mar 10 17:16:18 MST 2001
-//echo date('H:m:s \m \i\s\ \m\o\n\t\h');     // 17:03:18 m is month
-//echo date("H:i:s");                         // 17:16:18
-//echo date("Y-m-d H:i:s");                   // 2001-03-10 17:16:18 (формат MySQL DATETIME)
-
-//strtotime  Преобразует текстовое представление даты на английском языке в метку времени Unix
-//echo strtotime("now"), "\n";
-//echo strtotime("10 January 2000"), "\n";
-//echo strtotime("+1 day"), "\n";
-//echo strtotime("+1 week"), "\n";
-//echo strtotime("+1 week 2 days 4 hours 2 seconds"), "\n";
-//echo strtotime("next Thursday"), "\n";
-//echo strtotime("last Monday"), "\n";
-
-//echo date('Y-m-d : H-i-s', strtotime("+1 day"));
-
-//mktime   Возвращает метку времени Unix для заданной даты
-//echo mktime(0, 0, 0, 12, 03, 1997)."<br/>";
-//echo date("M-d-Y", mktime(0, 0, 0, 12, 03, 1997));
-//echo date("M-d-Y", mktime(0, 0, 0, 01, 1, 1997));
-//echo date("M-d-Y", mktime(0, 0, 0, 1, 1, 1998));
-//echo date("M-d-Y", mktime(0, 0, 0, 1, 1, 98));
-
-//time — Возвращает текущую метку времени Unix
-//echo microtime(true);
-//$nextWeek = time() + (7 * 24 * 60 * 60);
-//// 7 дней; 24 часа; 60 минут; 60 секунд
-//echo 'Сейчас:           '. date('Y-m-d') ."<br />";
-//echo 'Следующая неделя: '. date('Y-m-d', $nextWeek) ."<br />";
-
-
-
-// FUNCTION
-//$nameList = [
-//    'Vlad',
-//    'Dima',
-//    'Petia',
-//];
-//
-//foreach ($nameList as $firstName) {
-//    printHello($firstName);
+//    $value = trim($value, ' #');
 //}
 //
-//printHello();
-//
-//function printHello($name = 'NoName')
+//$fruit = ['#apple ',' banana#', '#cranberry#'];
+//var_dump($fruit);
+//array_walk($fruit, 'trim_value');
+//var_dump($fruit);
+
+//$str = 'яблоко';
+//if (md5($str) === '1afa148eb41f2e7103f21410bf48346c')
 //{
-//    echo "Hello Mr. $name, <br /> How are you?<br />";
+//    echo "Вам зеленое или красное яблоко?";
 //}
 
-//$valueOne   = 10;
-//$valueTwo   = 20;
-//$mathSymbol = '+';
-//
-//calculate($mathResult, $valueOne, $valueTwo, $mathSymbol);
-//
-//print_r($mathResult);
-//
-//function calculate(&$result, $operatorOne, $operatorTwo, $symbol)
-//{
-//    switch ($symbol) {
-//        case '+':
-//            $result = $operatorOne + $operatorTwo;
-//            break;
-//        default:
-//            $result = 0;
-//            break;
-//    }
+//echo '<br />' . md5($str);
+//echo '<br />' . sha1($str);
+
+//$number = 1234.56;
+// международный формат в локали en_US
+//setlocale(LC_MONETARY, 'en_US');
+//echo money_format('%i', $number) . "\n";
+// USD 1,234.56
+// Итальянский национальный формат с 2 знаками после запятой
+//setlocale(LC_MONETARY, 'it_IT');
+//echo money_format('%.2n', $number) . "\n";
+// Eu 1.234,56
+
+//$str = 'abcdef';
+//echo "Длинна строки abcdef = " . strlen($str); // 6
+
+//$mystring = 'abc';
+//$findme   = 'a';
+//$pos = strpos($mystring, $findme);
+//if ($pos === false) {
+//    echo "Подстрока '$findme' не найдена в строке '$mystring'";
+//} else {
+//    echo "Подстрока '$findme' найдена в строке '$mystring'";
+//    echo "<br />в позиции $pos";
 //}
 
-/**
- * Display firstName and secondName
- * @param string $name
- * @param string $secondName
- * @return string Information about full name for some person
- */
-//function displayFullName($name, $secondName)
-//{
-//    $fullName = "My name is $name! <br />
-//                 My secondname is $secondName!!<br /><br />";
-//    return $fullName;
-//}
-//echo displayFullName('Ivan', 'Ivanov');
-//echo displayFullName('Petr', 'Petrov');
+//$email  = 'name@example.com';
+//$domain = strstr($email, '@');
+//echo $domain . '<br />'; // выводит @example.com
 
-//func_num_args() — Возвращает количество аргументов, переданных функции
+//$user = strstr($email, '@', true); // Начиная с PHP 5.3.0
+//echo $user; // выводит name
 
-//function foo()
-//{
-//    $numargs = func_num_args();
-//    echo "Количество аргументов: $numargs\n";
-//}
-//foo(1, 2, 3);
+//$str = "Mary Had A Little Lamb and She LOVED It So";
+//$str = strtolower($str);
+//echo $str . '<br />'; // выводит: mary had a little lamb and she loved it so
 
-//func_get_arg() — Возвращает элемент из списка аргументов
-//function foo1()
-//{
-//    $numargs = func_num_args();
-//    echo "Количество аргументов: $numargs<br />";
-//    if ($numargs >= 2) {
-//        echo "Второй аргумент: " . func_get_arg(1) . "\n";
-//    }
-//}
-//foo1(1, 21, 3);
+//$str = "Mary Had A Little Lamb and She LOVED It So";
+//$str = strtoupper($str);
+//echo $str; // выводит: MARY HAD A LITTLE LAMB AND SHE LOVED IT SO
 
-//func_get_args() — Возвращает массив, содержащий аргументы функции
-//function foo2()
-//{
-//    $numargs = func_num_args();
-//    echo "Количество аргументов: $numargs<br />";
-//    if ($numargs >= 2)
-//    {
-//        echo "Второй аргумент: " . func_get_arg(1) . "<br />";
-//    }
-//    $arg_list = func_get_args();
-//    for ($i = 0; $i < $numargs; $i++)
-//    {
-//        echo "Аргумент №$i: " . $arg_list[$i] . "<br />";
-//    }
-//}
-//foo2(11, 21, 31);
+//$string = "<body background='%body%'>";
+//$bodytag = str_replace("%body%", "black", $string);
+//echo $bodytag;
 
 
+// Порядок замены
+//$str     = "String with fuck word and ass shirt of piace";
+//$order   = ["fuck", "ass", "shirt", "piace"];
+//$replace = ["f*ck", "*ss", "kiss"];
+// Обрабатывает сначала \r\n для избежания их повторной замены.
+//echo $newstr = str_replace($order, $replace, $str);
 
+//$rest = substr("abcdef", 2, 1);
+//echo $rest . "<br />";
 
-//$weather = "bad";
-//
-//if (true XOR true)
-//{
-//    echo "It Cool!!!";
+//$rest = substr("abcdef", 2, 2);
+//echo $rest;
+
+//REGEX
+// preg_match — Выполняет проверку на соответствие регулярному выражению
+//$subject = "abcdef";
+//$pattern = '/^abc/';
+//preg_match($pattern, $subject, $matches);
+//print_r($matches);
+//$subject = "My email is vasia@mail.com and it is cool
+//My second email maybe test@mail.org is not loggin";
+//$pattern = '/[a-z]+@[a-z]*\.[a-z]{3}/i';
+//preg_match($pattern, $subject, $matches, PREG_OFFSET_CAPTURE);
+//print_r($matches);
+// preg_replace — Выполняет поиск и замену по регулярному выражению
+//$string = 'April 15, 2003';
+//$pattern = '/(\w+) (\d+), (\d+)/i';
+//$replacement = '$11,$3';
+//var_dump(preg_replace($pattern, $replacement, $string));
+//$name = 'Name';
+//if (!preg_match("/^[a-zA-Z\s]+$/",$name)) {
+//	$nameErr = "Only letters and white space allowed";
+//	echo $nameErr;
 //}
 //else
 //{
-//    echo "It not good!!!";
+//	echo "OK!!!";
 //}
 
-include "code.php";
+//$url = "http://2coders.ru/";
+//$regexp = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
+//if (preg_match($regexp, $url)) {
+//    echo "Все правильно";
+//}
+//else
+//{
+//    echo "Вы ввели неправильное имя домена";
+//}
+
+$value = "213";
+$regexp = '/^[\d]{1,10}$/';
+if (preg_match($regexp, $value)) {
+    echo "Все правильно";
+}
+else
+{
+    echo "Вы ввели не число";
+}
+
+$homeWork = <<<html
+1) Вывести дату своего рождения в 3х форматах;<br />
+2) Написать калькулятор используя формы (использовать проверки для неверно заданных 
+   значений и возвращать ошибки на исправление). Интерфейс построить с использованием бутстрап библиотеки;<br />
+3) Грамотно поместить все в гит пулреквестом;
+html;
+//echo $homeWork;
 
 echo "</h1>";
-?>
-
-<form action="index.php" method="post">
-    <input name="firstName" value="<?=$name?>" placeholder="Enter your firstname" />
-    <input type="submit" value="Отправить" />
-</form>
