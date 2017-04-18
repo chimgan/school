@@ -169,8 +169,6 @@ $bar->do_foo();
 //function printHello($name = 'NoName')
 //{
 //    echo "Hello Mr. $name, <br /> How are you?<br />";
-//    $name = "???";
-//
 //}
 
 //$valueOne   = 10;
@@ -259,13 +257,7 @@ $bar->do_foo();
 //    echo "It not good!!!";
 //}
 
-$name = '';
-
-if (isset($_POST['firstName']) && !empty($_POST['firstName'])) {
-    $name = $_POST['firstName'];
-}
-
-echo "Вы ввели имя: {$name}";
+include "code.php";
 
 echo "</h1>";
 ?>
