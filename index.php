@@ -1,191 +1,6 @@
 <?php
 echo "<h1>";
 
-//echo intval(42)."<br />";                      // 42
-//echo intval(4.2)."<br />";                     // 4
-//echo intval('42')."<br />";                    // 42
-//echo intval('+42')."<br />";                   // 42
-//echo intval('-42')."<br />";                   // -42
-//echo (integer)'11a '."<br />";                   // -42
-
-//$var = '122.34343The';
-//$float_value_of_var = floatval($var);
-//echo $float_value_of_var; // 122.34343
-
-//$foo = "5bar"; // строка
-//$bar = false;   // булевое значение
-//settype($foo, "integer"); // $foo теперь 5   (целое)
-//settype($bar, "string");  // $bar теперь "1" (строка)
-//settype($bar, "boolean");  // $bar теперь "1" (строка)
-//var_dump($bar);
-//echo gettype($bar);
-
-//$a    = 'car bar'; // $a - это строка
-//$a[4] = 'c';   // $a все еще строка
-//echo $a;       // bar
-//for ($i = 0; $i < strlen($a); $i++)
-//{
-//    echo $a[$i] . "<br />";
-//}
-// Не будет работать так как не массив
-//foreach ($a as $value)
-//{
-//    echo $value . "<br />";
-//}
-
-//$foo = 10;   // $foo это целое число
-//$bar = (boolean) $foo;   // $bar это булев тип
-//var_dump($bar);
-//$var = 1;
-//echo $var;
-//unset($var);
-//$var = 12;
-//echo $var;
-
-//function variableChanger(&$arg1, $arg2 = '')
-//{
-//    unset($arg1);
-//    $arg1 = "blah";
-//}
-//
-//$blackJack = 'something';
-//echo "$blackJack<br />";
-//variableChanger($blackJack);
-//echo "$blackJack<br />";
-
-
-// Some information about git
-//https://git-scm.com/book/ru/v1/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%9E-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D0%B5-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B9
-//https://camo.githubusercontent.com/f2a574f39c54fec927c020221af0fced76f0e7db/68747470733a2f2f646f63732e676f6f676c652e636f6d2f64726177696e67732f642f317238334b3634544643744239386d424747463964324b5056656b556e6d6979396562665675676a726378302f7075623f773d36303626683d323930
-//git log --oneline --decorate --all --graph
-//git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
-
-
-//$string = "<a href='test'>Test</a>";
-//$new = htmlspecialchars($string, ENT_QUOTES);
-//echo $new; // &lt;a href=&#039;test&#039;&gt;Test&lt;/a&gt;
-//echo '<br />';
-//$str = "<p>this -&gt; &quot;</p>\n";
-//echo htmlspecialchars_decode($str, ENT_QUOTES);
-
-
-//$form = <<<FORM
-//<form action="index.php" method="post">
-// <p>Ваше имя:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="name" placeholder="123" /></p>
-// <p>Ваш возраст: <input type="text" name="age" /></p>
-// <p><input type="submit" /></p>
-//</form>
-//FORM;
-//echo $form;
-
-//$array = [1,2,3,4,5];
-//var_dump(in_array(7, $array));
-
-
-
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! String function !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-//echo "foo - это вам не\n bar" . "<br />";
-//echo nl2br("foo - это вам не\n bar");
-
-//$str = "Ваше имя O'Reilly?";
-//$str = 'Ваше имя O"Reilly?';
-// выводит: Ваше имя O\'Reilly?
-//echo addslashes($str).'<br />';
-//echo stripslashes($str);
-
-
-//$pizza  = "кусок1 кусок2 кусок3 кусок4 кусок5 кусок6";
-//$pieces = explode(" ", $pizza);
-//echo $pieces[0].'<br />'; // кусок1
-//echo $pieces[1]; // кусок2
-//var_dump($pieces);
-
-
-$array = [
-    'имя',
-    'почта',
-    'телефон'
-];
-//$comma_separated = implode("# ", $array);
-//echo $comma_separated; // имя,почта,телефон
-
-//function trim_value(&$value)
-//{
-//    $value = trim($value, ' #');
-//}
-//
-//$fruit = ['#apple ',' banana#', '#cranberry#'];
-//var_dump($fruit);
-//array_walk($fruit, 'trim_value');
-//var_dump($fruit);
-
-//$str = 'яблоко';
-//if (md5($str) === '1afa148eb41f2e7103f21410bf48346c')
-//{
-//    echo "Вам зеленое или красное яблоко?";
-//}
-
-//echo '<br />' . md5($str);
-//echo '<br />' . sha1($str);
-
-//$number = 1234.56;
-// международный формат в локали en_US
-//setlocale(LC_MONETARY, 'en_US');
-//echo money_format('%i', $number) . "\n";
-// USD 1,234.56
-// Итальянский национальный формат с 2 знаками после запятой
-//setlocale(LC_MONETARY, 'it_IT');
-//echo money_format('%.2n', $number) . "\n";
-// Eu 1.234,56
-
-//$str = 'abcdef';
-//echo "Длинна строки abcdef = " . strlen($str); // 6
-
-//$mystring = 'abc';
-//$findme   = 'a';
-//$pos = strpos($mystring, $findme);
-//if ($pos === false) {
-//    echo "Подстрока '$findme' не найдена в строке '$mystring'";
-//} else {
-//    echo "Подстрока '$findme' найдена в строке '$mystring'";
-//    echo "<br />в позиции $pos";
-//}
-
-//$email  = 'name@example.com';
-//$domain = strstr($email, '@');
-//echo $domain . '<br />'; // выводит @example.com
-
-//$user = strstr($email, '@', true); // Начиная с PHP 5.3.0
-//echo $user; // выводит name
-
-//$str = "Mary Had A Little Lamb and She LOVED It So";
-//$str = strtolower($str);
-//echo $str . '<br />'; // выводит: mary had a little lamb and she loved it so
-
-//$str = "Mary Had A Little Lamb and She LOVED It So";
-//$str = strtoupper($str);
-//echo $str; // выводит: MARY HAD A LITTLE LAMB AND SHE LOVED IT SO
-
-//$string = "<body background='%body%'>";
-//$bodytag = str_replace("%body%", "black", $string);
-//echo $bodytag;
-
-
-// Порядок замены
-//$str     = "String with fuck word and ass shirt of piace";
-//$order   = ["fuck", "ass", "shirt", "piace"];
-//$replace = ["f*ck", "*ss", "kiss"];
-// Обрабатывает сначала \r\n для избежания их повторной замены.
-//echo $newstr = str_replace($order, $replace, $str);
-
-//$rest = substr("abcdef", 2, 1);
-//echo $rest . "<br />";
-
-//$rest = substr("abcdef", 2, 2);
-//echo $rest;
-
 //REGEX
 // preg_match — Выполняет проверку на соответствие регулярному выражению
 //$subject = "abcdef";
@@ -222,15 +37,154 @@ $array = [
 //    echo "Вы ввели неправильное имя домена";
 //}
 
-$value = "213";
-$regexp = '/^[\d]{1,10}$/';
-if (preg_match($regexp, $value)) {
-    echo "Все правильно";
-}
-else
-{
-    echo "Вы ввели не число";
-}
+//$value = "213";
+//$regexp = '/^[\d]{1,10}$/';
+//if (preg_match($regexp, $value)) {
+//    echo "Все правильно";
+//}
+//else
+//{
+//    echo "Вы ввели не число";
+//}
+
+
+
+
+//Массивы Основы
+//Суперглобальные массивы
+//var_dump($_SERVER);
+//$_GET
+//$_POST
+//$_FILES
+$form = <<<html
+<form enctype="multipart/form-data" action="index.php" method="POST">
+    <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
+    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+    <!-- Название элемента input определяет имя в массиве \$_FILES -->
+    Отправить этот файл: <input name="userfile" type="file" />
+    <input type="submit" value="Send File" />
+</form>
+html;
+//echo $form;
+//if (isset($_FILES['userfile']['name'])) {
+//    $uploaddir = '/home/vlad/Projects/school/';
+//    $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
+//
+//    echo '<pre>';
+//    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+//        echo "Файл корректен и был успешно загружен.\n";
+//    } else {
+//        echo "Возможная атака с помощью файловой загрузки!\n";
+//    }
+//
+//    echo 'Некоторая отладочная информация:';
+//    print_r($_FILES);
+//
+//    print "</pre>";
+//}
+//$_COOKIE
+//$_SESSION
+//if ( !session_id() )
+//{
+//    session_start();
+//}
+//$_REQUEST
+//$_ENV
+// Пример использования getenv()
+//$uniqId = 12345;
+//putenv("UNIQID=$uniqId");
+//$ip = getenv('REMOTE_ADDR');
+//$uniqId = getenv('UNIQID');
+//echo $uniqId . '<br />';
+//echo $ip;
+//var_dump($_ENV);
+//Функции работы с массивами
+//Функции сортировки массива
+//Поиск в массиве
+//Слияние и разделение массивов
+//$array = [1, "hello", 1, "world", "hello"];
+//print_r(array_count_values($array));
+// Функция подсчета лементов значения в массиве
+//print_r(count($array));
+//print_r(sizeof($array));
+//$search_array = [
+//	'first' => 1,
+//	'second' => 4
+//];
+//if (array_key_exists('first1', $search_array)) {
+//    echo "Массив содержит элемент 'first'.";
+//}else{
+//    echo "Массив не содержит заданного ключа";
+//}
+//$os = array("Mac", "NT", "Irix", "Linux");
+//if (in_array("irix", $os)) {
+//    echo "Нашел Irix";
+//}
+//if (in_array("Mac", $os)) {
+//    echo "Нашел mac";
+//}
+//$array = array(0 => 100, "color" => "red");
+//print_r(array_keys($array));
+//$array = array("size" => "XL", "color" => "gold");
+//print_r(array_values($array));
+//function cube($n)
+//{
+//    return($n * $n * $n);
+//}
+//$a = array(1, 2, 3, 4, 5);
+//$b = array_map(function($value){
+//    return $value * $value;
+//}, $a);
+//print_r($b);
+//$array = array(0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red');
+//$key = array_search('green', $array); // $key = 2;
+//echo $key . "<br />";
+//$key = array_search('red1', $array);   // $key = 1;
+//var_dump($key) . "<br />";
+//$array1 = array("color" => "red", 0 => 2, 4);
+//$array2 = array(0 => "a", "b", "color" => "green", "shape" => "trapezoid", 4);
+//$result = array_merge($array1, $array2);
+//print_r($result);
+//$base = array("orange", "banana", "apple", "raspberry");
+//$replacements = array(0 => "pineapple", 4 => "cherry");
+//$replacements2 = array(0 => "grape");
+//$basket = array_replace($base, $replacements, $replacements2);
+//print_r($basket);
+//$input = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
+//$rand_keys = array_rand($input, 4);
+//print_r($rand_keys);
+//echo $input[$rand_keys[0]] . "\n";
+//echo $input[$rand_keys[1]] . "\n";
+//$numbers = range(10, 20);
+//shuffle($numbers);
+//foreach ($numbers as $number) {
+//    echo "$number <br />";
+//}
+//$fruits = array("lemon", "orange", "banana", "apple");
+//asort($fruits);
+//foreach ($fruits as $key => $val)
+//{
+//    echo "fruits[" . $key . "] = " . $val . "<br />";
+//}
+//function cmp($a, $b)
+//{
+//    if ($a == $b) {
+//        return 0;
+//    }
+//    return ($a < $b) ? -1 : 1;
+//}
+//$a = array(3, 2, 5, 6, 1);
+//usort($a, "cmp");
+//foreach ($a as $key => $value) {
+//    echo "$value <br />";
+//}
+//Файловая система
+//Основы
+//pathinfo и другие функции связанные с путями
+//функции для работы с файлами (filesize, filetype, filemtime)
+//include(_once), require(_once)
+//fopen, fwrite, fread, fclose
+//file_get_contents, file_put_contents
 
 $homeWork = <<<html
 1) Вывести дату своего рождения в 3х форматах;<br />
