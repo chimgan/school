@@ -48,7 +48,13 @@ echo "<h1>";
 //}
 
 
-
+//$i = 3;
+//if ($i > 2) {
+//    $i = 10;
+//}
+//($i > 2) && $i = 10;
+//$i = ($i > 5) ? 10 : 1;
+//echo $i;
 
 //Массивы Основы
 //Суперглобальные массивы
@@ -56,16 +62,20 @@ echo "<h1>";
 //$_GET
 //$_POST
 //$_FILES
-$form = <<<html
-<form enctype="multipart/form-data" action="index.php" method="POST">
-    <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
-    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-    <!-- Название элемента input определяет имя в массиве \$_FILES -->
-    Отправить этот файл: <input name="userfile" type="file" />
-    <input type="submit" value="Send File" />
-</form>
-html;
+//$form = <<<html
+//<form enctype="multipart/form-data" action="index.php" method="POST">
+//    <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
+//    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+//    <input type="text" name="test_variable" value="111" />
+//    <!-- Название элемента input определяет имя в массиве \$_FILES -->
+//    Отправить этот файл:
+//    <input name="userfile" type="file" />
+//    <input type="submit" value="Send File" />
+//</form>
+//html;
+//
 //echo $form;
+//
 //if (isset($_FILES['userfile']['name'])) {
 //    $uploaddir = '/home/vlad/Projects/school/';
 //    $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
@@ -79,6 +89,8 @@ html;
 //
 //    echo 'Некоторая отладочная информация:';
 //    print_r($_FILES);
+//    echo "-----------------------------";
+//    print_r($_POST);
 //
 //    print "</pre>";
 //}
@@ -88,20 +100,29 @@ html;
 //{
 //    session_start();
 //}
+//
+//$_SESSION['myTestSession'] = 111;
+//
+//print_r($_SESSION);
+//echo "<a href='session.php'>link</a>";
+
 //$_REQUEST
 //$_ENV
+
 // Пример использования getenv()
 //$uniqId = 12345;
 //putenv("UNIQID=$uniqId");
 //$ip = getenv('REMOTE_ADDR');
+//var_dump($_ENV);
 //$uniqId = getenv('UNIQID');
 //echo $uniqId . '<br />';
 //echo $ip;
-//var_dump($_ENV);
+
 //Функции работы с массивами
 //Функции сортировки массива
 //Поиск в массиве
 //Слияние и разделение массивов
+echo "<pre>";
 //$array = [1, "hello", 1, "world", "hello"];
 //print_r(array_count_values($array));
 // Функция подсчета лементов значения в массиве
@@ -111,61 +132,77 @@ html;
 //	'first' => 1,
 //	'second' => 4
 //];
-//if (array_key_exists('first1', $search_array)) {
-//    echo "Массив содержит элемент 'first'.";
+//if (array_key_exists('second', $search_array)) {
+//    echo "Массив содержит элемент 'second'.";
 //}else{
 //    echo "Массив не содержит заданного ключа";
 //}
-//$os = array("Mac", "NT", "Irix", "Linux");
+
+//$os = ["Mac", "NT", "Irix", "Linux"];
 //if (in_array("irix", $os)) {
 //    echo "Нашел Irix";
 //}
 //if (in_array("Mac", $os)) {
 //    echo "Нашел mac";
 //}
-//$array = array(0 => 100, "color" => "red");
+
+//$array = [0 => 100, "color" => "red"];
 //print_r(array_keys($array));
-//$array = array("size" => "XL", "color" => "gold");
+
+//echo ucfirst(strtolower('Ia LoShAdKo'));
+//
+//$array = ["size" => "XL", "color" => "gold"];
 //print_r(array_values($array));
+
 //function cube($n)
 //{
 //    return($n * $n * $n);
 //}
 //$a = array(1, 2, 3, 4, 5);
-//$b = array_map(function($value){
+//$b = array_map('cube', $a);
+//$b = array_map(function($value) {
 //    return $value * $value;
 //}, $a);
 //print_r($b);
-//$array = array(0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red');
+
+//$array = [0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red'];
 //$key = array_search('green', $array); // $key = 2;
 //echo $key . "<br />";
 //$key = array_search('red1', $array);   // $key = 1;
 //var_dump($key) . "<br />";
-//$array1 = array("color" => "red", 0 => 2, 4);
-//$array2 = array(0 => "a", "b", "color" => "green", "shape" => "trapezoid", 4);
+
+//$array1 = ["color" => "red", 0 => 2, 4];
+//$array2 = [0 => "a", "b", "color" => "green", "shape" => "trapezoid", 4];
 //$result = array_merge($array1, $array2);
 //print_r($result);
+
 //$base = array("orange", "banana", "apple", "raspberry");
 //$replacements = array(0 => "pineapple", 4 => "cherry");
 //$replacements2 = array(0 => "grape");
+//$basket = array_replace($base, $replacements);
 //$basket = array_replace($base, $replacements, $replacements2);
 //print_r($basket);
+
 //$input = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
-//$rand_keys = array_rand($input, 4);
+//$rand_keys = array_rand($input, 3);
 //print_r($rand_keys);
-//echo $input[$rand_keys[0]] . "\n";
-//echo $input[$rand_keys[1]] . "\n";
+//echo $input[$rand_keys[0]] . "<br />";
+//echo $input[$rand_keys[1]] . "<br />";
+//array_unshift($array, 't');
+
 //$numbers = range(10, 20);
 //shuffle($numbers);
 //foreach ($numbers as $number) {
 //    echo "$number <br />";
 //}
-//$fruits = array("lemon", "orange", "banana", "apple");
-//asort($fruits);
+
+//$fruits = ["lemon", 1, "orange", "banana", "apple"];
+//ksort($fruits);
 //foreach ($fruits as $key => $val)
 //{
 //    echo "fruits[" . $key . "] = " . $val . "<br />";
 //}
+
 //function cmp($a, $b)
 //{
 //    if ($a == $b) {
@@ -178,6 +215,8 @@ html;
 //foreach ($a as $key => $value) {
 //    echo "$value <br />";
 //}
+
+
 //Файловая система
 //Основы
 //pathinfo и другие функции связанные с путями
