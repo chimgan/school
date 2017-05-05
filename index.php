@@ -1,236 +1,164 @@
 <?php
+//include_once "var.php";
 echo "<h1>";
 
-//REGEX
-// preg_match — Выполняет проверку на соответствие регулярному выражению
-//$subject = "abcdef";
-//$pattern = '/^abc/';
-//preg_match($pattern, $subject, $matches);
-//print_r($matches);
-//$subject = "My email is vasia@mail.com and it is cool
-//My second email maybe test@mail.org is not loggin";
-//$pattern = '/[a-z]+@[a-z]*\.[a-z]{3}/i';
-//preg_match($pattern, $subject, $matches, PREG_OFFSET_CAPTURE);
-//print_r($matches);
-// preg_replace — Выполняет поиск и замену по регулярному выражению
-//$string = 'April 15, 2003';
-//$pattern = '/(\w+) (\d+), (\d+)/i';
-//$replacement = '$11,$3';
-//var_dump(preg_replace($pattern, $replacement, $string));
-//$name = 'Name';
-//if (!preg_match("/^[a-zA-Z\s]+$/",$name)) {
-//	$nameErr = "Only letters and white space allowed";
-//	echo $nameErr;
-//}
-//else
-//{
-//	echo "OK!!!";
-//}
-
-//$url = "http://2coders.ru/";
-//$regexp = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
-//if (preg_match($regexp, $url)) {
-//    echo "Все правильно";
-//}
-//else
-//{
-//    echo "Вы ввели неправильное имя домена";
-//}
-
-//$value = "213";
-//$regexp = '/^[\d]{1,10}$/';
-//if (preg_match($regexp, $value)) {
-//    echo "Все правильно";
-//}
-//else
-//{
-//    echo "Вы ввели не число";
-//}
-
-
-//$i = 3;
-//if ($i > 2) {
-//    $i = 10;
-//}
-//($i > 2) && $i = 10;
-//$i = ($i > 5) ? 10 : 1;
-//echo $i;
-
-//Массивы Основы
-//Суперглобальные массивы
-//var_dump($_SERVER);
-//$_GET
-//$_POST
-//$_FILES
-//$form = <<<html
-//<form enctype="multipart/form-data" action="index.php" method="POST">
-//    <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
-//    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-//    <input type="text" name="test_variable" value="111" />
-//    <!-- Название элемента input определяет имя в массиве \$_FILES -->
-//    Отправить этот файл:
-//    <input name="userfile" type="file" />
-//    <input type="submit" value="Send File" />
-//</form>
-//html;
-//
-//echo $form;
-//
-//if (isset($_FILES['userfile']['name'])) {
-//    $uploaddir = '/home/vlad/Projects/school/';
-//    $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-//
-//    echo '<pre>';
-//    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-//        echo "Файл корректен и был успешно загружен.\n";
-//    } else {
-//        echo "Возможная атака с помощью файловой загрузки!\n";
-//    }
-//
-//    echo 'Некоторая отладочная информация:';
-//    print_r($_FILES);
-//    echo "-----------------------------";
-//    print_r($_POST);
-//
-//    print "</pre>";
-//}
-//$_COOKIE
-//$_SESSION
-//if ( !session_id() )
-//{
-//    session_start();
-//}
-//
-//$_SESSION['myTestSession'] = 111;
-//
-//print_r($_SESSION);
-//echo "<a href='session.php'>link</a>";
-
-//$_REQUEST
-//$_ENV
-
-// Пример использования getenv()
-//$uniqId = 12345;
-//putenv("UNIQID=$uniqId");
-//$ip = getenv('REMOTE_ADDR');
-//var_dump($_ENV);
-//$uniqId = getenv('UNIQID');
-//echo $uniqId . '<br />';
-//echo $ip;
-
-//Функции работы с массивами
-//Функции сортировки массива
-//Поиск в массиве
-//Слияние и разделение массивов
-echo "<pre>";
-//$array = [1, "hello", 1, "world", "hello"];
-//print_r(array_count_values($array));
-// Функция подсчета лементов значения в массиве
-//print_r(count($array));
-//print_r(sizeof($array));
-//$search_array = [
-//	'first' => 1,
-//	'second' => 4
-//];
-//if (array_key_exists('second', $search_array)) {
-//    echo "Массив содержит элемент 'second'.";
-//}else{
-//    echo "Массив не содержит заданного ключа";
-//}
-
-//$os = ["Mac", "NT", "Irix", "Linux"];
-//if (in_array("irix", $os)) {
-//    echo "Нашел Irix";
-//}
-//if (in_array("Mac", $os)) {
-//    echo "Нашел mac";
-//}
-
-//$array = [0 => 100, "color" => "red"];
-//print_r(array_keys($array));
-
-//echo ucfirst(strtolower('Ia LoShAdKo'));
-//
-//$array = ["size" => "XL", "color" => "gold"];
-//print_r(array_values($array));
-
-//function cube($n)
-//{
-//    return($n * $n * $n);
-//}
-//$a = array(1, 2, 3, 4, 5);
-//$b = array_map('cube', $a);
-//$b = array_map(function($value) {
-//    return $value * $value;
-//}, $a);
-//print_r($b);
-
-//$array = [0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red'];
-//$key = array_search('green', $array); // $key = 2;
-//echo $key . "<br />";
-//$key = array_search('red1', $array);   // $key = 1;
-//var_dump($key) . "<br />";
-
-//$array1 = ["color" => "red", 0 => 2, 4];
-//$array2 = [0 => "a", "b", "color" => "green", "shape" => "trapezoid", 4];
-//$result = array_merge($array1, $array2);
-//print_r($result);
-
-//$base = array("orange", "banana", "apple", "raspberry");
-//$replacements = array(0 => "pineapple", 4 => "cherry");
-//$replacements2 = array(0 => "grape");
-//$basket = array_replace($base, $replacements);
-//$basket = array_replace($base, $replacements, $replacements2);
-//print_r($basket);
-
-//$input = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
-//$rand_keys = array_rand($input, 3);
-//print_r($rand_keys);
-//echo $input[$rand_keys[0]] . "<br />";
-//echo $input[$rand_keys[1]] . "<br />";
-//array_unshift($array, 't');
-
-//$numbers = range(10, 20);
-//shuffle($numbers);
-//foreach ($numbers as $number) {
-//    echo "$number <br />";
-//}
-
-//$fruits = ["lemon", 1, "orange", "banana", "apple"];
-//ksort($fruits);
-//foreach ($fruits as $key => $val)
-//{
-//    echo "fruits[" . $key . "] = " . $val . "<br />";
-//}
-
-//function cmp($a, $b)
-//{
-//    if ($a == $b) {
-//        return 0;
-//    }
-//    return ($a < $b) ? -1 : 1;
-//}
-//$a = array(3, 2, 5, 6, 1);
-//usort($a, "cmp");
-//foreach ($a as $key => $value) {
-//    echo "$value <br />";
-//}
+//echo $testVar;
 
 
 //Файловая система
 //Основы
 //pathinfo и другие функции связанные с путями
+
+
+
+//pathinfo — Возвращает информацию о пути к файлу
+//$path_parts = pathinfo('/home/vlad/Projects/school/index.php');
+//var_dump($path_parts);
+//echo $path_parts['dirname'],   "<br />";
+//echo $path_parts['basename'],  "<br />";
+//echo $path_parts['extension'], "<br />";
+//echo $path_parts['filename'],  "<br />"; // начиная с PHP 5.2.0
+
+
+//basename — Возвращает последний компонент имени из указанного пути
+//echo "1) ".basename("/etc/sudoers.d", ".d"). "<br />";
+//echo "2) ".basename("/etc/sudoers.d"). "<br />";
+//echo "3) ".basename("/etc/passwd"). "<br />";
+//echo "4) ".basename("/etc/"). "<br />";
+//echo "5) ".basename("."). "<br />";
+//echo "6) ".basename("/");
+
+
+//dirname — Возвращает имя родительского каталога из указанного пути
+//echo dirname("/etc/passwd") .  "<br />";
+//echo dirname("/etc/") .  "<br />";
+//echo dirname(".") .  "<br />";
+//echo dirname("/usr/local/lib", 2);
+
+//realpath — Возвращает канонизированный абсолютный путь к файлу
+//echo realpath('./../../Desktop/../Projects');
+// /home/vlad/Projects/school/index.php
+// ./../dirname
+
 //функции для работы с файлами (filesize, filetype, filemtime)
+//$filename = 'README.md';
+//echo 'Размер файла ' . $filename . ': ' . filesize($filename) . ' байт';
+
+
+//filetype — Возвращает тип файла
+//echo filetype('/etc/passwd') . "<br />";  // file
+//echo filetype('/etc/') . "<br />";        // dir
+//echo filetype('/home/vlad/Projects/school/my_ln') . "<br />"; // link
+
+
+
+
+
+
+//filemtime — Возвращает время последнего изменения файла
+//$filename = 'lib.inc.php';
+//if (file_exists($filename)) {
+//    echo "В последний раз файл \"$filename\" был изменен: " . date ("F d Y H:i:s.", filemtime($filename));
+//}
+
+
+
 //include(_once), require(_once)
 //fopen, fwrite, fread, fclose
+//fopen — Открывает файл или URL
+$filePath = '/home/vlad/Projects/school/lib.inc.php';
+//$handle = fopen($filePath, "r");
+//if (FALSE === $handle)
+//{
+//    exit("Не удалось открыть поток по url адресу");
+//}
+//
+//$contents = '';
+//
+//while (!feof($handle))
+//{
+//    $contents .= fread($handle, filesize($filePath));
+//}
+//
+//fclose($handle);
+//print_r($contents);
+
+$somecontent = "Добавить это к файлу\n";
+
+// Вначале давайте убедимся, что файл существует и доступен для записи.
+//if (is_writable($filePath)) {
+//
+//    // В нашем примере мы открываем $filename в режиме "записи в конец".
+//    // Таким образом, смещение установлено в конец файла и
+//    // наш $somecontent допишется в конец при использовании fwrite().
+//    if (!$handle = fopen($filePath, 'a+')) {
+//        echo "Не могу открыть файл ($filePath)";
+//        exit;
+//    }
+//
+//    // Записываем $somecontent в наш открытый файл.
+//    if (fwrite($handle, $somecontent) === FALSE) {
+//        echo "Не могу произвести запись в файл ($filePath)";
+//        exit;
+//    }
+//
+//    echo "Ура! Записали ($somecontent) в файл ($filePath)";
+//
+//    fclose($handle);
+//
+//} else {
+//    echo "Файл $filename недоступен для записи";
+//}
+
+
 //file_get_contents, file_put_contents
+$filePath = '/home/vlad/Projects/school/lib.inc.php';
+
+//file_get_contents — Читает содержимое файла в строку
+//$homepage = file_get_contents('http://www.rozetka.ua/');
+//echo $homepage;
+
+//echo file_get_contents($filePath);
+//var_dump(file($filePath));
+
+
+////file_put_contents — Пишет строку в файл
+//$current = file_get_contents($filePath);
+//// Добавляем нового человека в файл
+//$current .= "John Smith\n";
+//// Пишем содержимое обратно в файл
+//file_put_contents($filePath, $current);
+//echo "Content successfully added";
+
+$filePath = '/home/vlad/Projects/school';
+if ($handle = opendir($filePath))
+{
+    if (false === ($entry = readdir($handle))) {
+	echo "Not permit"; exit;
+   }
+    while (false !== ($entry = readdir($handle))) {
+
+        if ($entry != "." && $entry != "..") {
+
+            echo "$entry<br />";
+        }
+    }
+
+    closedir($handle);
+}
+
+
+
+
 
 $homeWork = <<<html
-1) Вывести дату своего рождения в 3х форматах;<br />
-2) Написать калькулятор используя формы (использовать проверки для неверно заданных 
-   значений и возвращать ошибки на исправление). Интерфейс построить с использованием бутстрап библиотеки;<br />
-3) Грамотно поместить все в гит пулреквестом;
+Написать лазилку по файлам
+
+0) Написать грамотный шаблон HTML (example: <Doctype ..>< html >< head >...);
+1) Задать путь стартовой директории;
+2) 
 html;
+
 //echo $homeWork;
 
 echo "</h1>";
