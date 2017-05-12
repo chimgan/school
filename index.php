@@ -14,7 +14,10 @@ html;
 if (isset($_FILES['userfile']['name'])) {
     $uploaddir = '/home/vlad/Projects/school/upload/';
     $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-
+    if (mime_content_type($_FILES['userfile']['tmp_name']) != 'image/jpeg') {
+        echo "Загрузите изображение!";
+        exit;
+    }
     echo '<pre>';
     if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile))
     {
@@ -54,12 +57,21 @@ function fibonacci($n)
 
 //https://habrahabr.ru/post/141290/
 
-$link = mysql_connect('localhost', 'root', 'password');
-if (!$link) {
-	    die('Ошибка соединения: ' . mysql_error());
+
+$link = @mysqli_connect("localhost", "vlad", "password", "test");
+
+/* check connection */
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
 }
-echo 'Успешно соединились';
-mysql_close($link);
+
+if (!mysqli_query($link, "SELECT 1")) {
+    printf("Errormessage: %s\n", mysqli_error($link));
+}
+
+/* close connection */
+mysqli_close($link);
 
 $homeWork = <<<html
 
