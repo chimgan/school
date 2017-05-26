@@ -19,12 +19,9 @@ if (isset($_FILES['userfile']['name'])) {
         exit;
     }
     echo '<pre>';
-    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile))
-    {
+    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
         echo 'Файл корректен и был успешно загружен.<br />';
-    }
-    else
-    {
+    } else {
         echo 'Возможная атака с помощью файловой загрузки!<br />';
     }
 
@@ -35,16 +32,12 @@ if (isset($_FILES['userfile']['name'])) {
 }
 
 
-
 function fibonacci($n)
 {
-    if ($n < 3)
-    {
+    if ($n < 3) {
         return 1;
-    }
-    else
-    {
-        return fibonacci($n-1) + fibonacci($n-2);
+    } else {
+        return fibonacci($n - 1) + fibonacci($n - 2);
     }
 }
 
@@ -58,7 +51,7 @@ function fibonacci($n)
 //https://habrahabr.ru/post/141290/
 
 
-$link = @mysqli_connect("localhost", "vlad", "password", "test");
+$link = @mysqli_connect("localhost", "tuser", "password", "test");
 
 /* check connection */
 if (mysqli_connect_errno()) {
@@ -68,6 +61,8 @@ if (mysqli_connect_errno()) {
 
 if (!mysqli_query($link, "SELECT 1")) {
     printf("Errormessage: %s\n", mysqli_error($link));
+} else {
+    echo "Request complete done";
 }
 
 /* close connection */
