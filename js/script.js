@@ -1,11 +1,11 @@
-// $( document ).ready(function() {
+$( document ).ready(function() {
     // console.log( 'Ready!' );
     // console.log($( "body" ).html());
     // console.log($( "label#nameLabel" ).html("First Name:"));
     // сделать выборку в контексте элемента DOM
     // var firstBodyChild = document.body.children[0];
     // $( 'li', firstBodyChild ).html();
-// });
+});
 
 // $( '#header' ); // выбрать элемент с идентификатором header
 // $( 'li' );      // выбрать все пункты списков на странице
@@ -54,4 +54,3 @@ $(document).ready(function() {
         }
     });
 });
-

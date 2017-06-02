@@ -26,7 +26,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])
 
     //Insert query
     $query = "INSERT INTO form_element(name, email, password, contact) 
-              VALUES ('$name2', '$email2', '$password2','$contact2')";
+              VALUES ('$name2', '$email2', SHA1('$password2'),'$contact2')";
 
     $result = mysqli_query($connection, $query);
 
