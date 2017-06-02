@@ -11,7 +11,8 @@ else
 }
 
 $page = $_SERVER['PHP_SELF'];
-echo $page; exit;
+//echo $page; exit;
+
 $page = substr($page, 1, strlen($page) - 5);
 
 if (!in_array($page, $roles[$role]))
