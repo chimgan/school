@@ -1,54 +1,20 @@
 <?php
-if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])
-    && !empty($_SERVER['HTTP_X_REQUESTED_WITH'])
-    && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
-{
+include "Human.php";
+include "Indigo.php";
+
+$humanFirst = new Human(31, 'Black');
+$humanFirst->printInfo('???');
+
+echo "<br /><br /><br />";
+
+Human::_about();
+Human::$info;
+
+echo "<br /><br /><br />";
+
+$indigoFirst = new Indigo(16, 'Black', 99);
+$indigoFirst->printInfo('***');
 
 
-//echo 'Успешно соединились<br /><br />';
-//
-//$sqlQuery = "SELECT `id`, `name` FROM `author`";
-//$result = mysqli_query($link, $sqlQuery);
-    $connection = mysqli_connect('localhost', 'root', 'password', 'test');
-
-    if (mysqli_connect_errno())
-    {
-        printf("Connect failed: %s\n", mysqli_connect_error());
-        exit();
-    }
-//    $db = mysqli_select_db("test", $connection); // Selecting Database
-
-    //Fetching Values from URL
-    $name2     = htmlentities($_POST['name1']);
-    $email2    = htmlentities($_POST['email1']);
-    $password2 = htmlentities($_POST['password1']);
-    $contact2  = htmlentities($_POST['contact1']);
-
-    //Insert query
-    $query = "INSERT INTO form_element(name, email, password, contact) 
-              VALUES ('$name2', '$email2', SHA1('$password2'),'$contact2')";
-
-    $result = mysqli_query($connection, $query);
-
-    if ($result)
-    {
-        $answer =  "Form Submitted Succesfully";
-    }
-    else
-    {
-        $answer =  "Form Submitted With Errors";
-    }
-
-
-//    echo $answer;
-
-    header('Content-Type: application/json');
-    echo json_encode(['resultString' => $answer . ' with JSON']);
-
-    //mysqli_free_result($connection); // Free results
-    mysqli_close($connection); // Connection Closed
-}
-else
-{
-    echo "<h1>Warning: This script just for AJAX requests!</h1>";
-}
+echo "<br /><br /><br />";
+echo Indigo::PI;
