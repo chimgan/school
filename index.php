@@ -1,5 +1,6 @@
 <?php
 echo "<h1>";
+
 //final class BaseClass
 //{
 //    public function myMethod() {
@@ -50,6 +51,8 @@ echo "<h1>";
 //    }
 //}
 //
+////$obj = new AbstractClass();
+//
 //class ConcreteClass1 extends AbstractClass
 //{
 //    protected function getValue() {
@@ -75,7 +78,8 @@ echo "<h1>";
 //$class1 = new ConcreteClass1;
 //$class1->printOut();echo "<br />";
 //echo $class1->prefixValue('FOO_') ."\n";
-//echo "<br />";echo "<br />";
+//echo "<br />";
+//echo "<br />";
 //$class2 = new ConcreteClass2;
 //$class2->printOut();echo "<br />";
 //echo $class2->prefixValue('FOO_') ."\n";
@@ -105,8 +109,8 @@ echo "<h1>";
 //}
 //
 //$class = new ConcreteClass;
-//echo $class->prefixName("Pacman"), "\n";
-//echo $class->prefixName("Pacwoman"), "\n";
+//echo $class->prefixName("Pacman"),   "</br>";
+//echo $class->prefixName("Pacwoman"), "</br>";
 
 
 
@@ -122,7 +126,7 @@ echo "<h1>";
 //// Это сработает нормально
 //class Template implements iTemplate
 //{
-//    private $vars = array();
+//    private $vars = [];
 //
 //    public function setVariable($name, $var)
 //    {
@@ -138,7 +142,7 @@ echo "<h1>";
 //        return $template;
 //    }
 //}
-//
+
 ////// Это не будет работать
 ////// Fatal error: Class BadTemplate contains 1 abstract methods
 ////// and must therefore be declared abstract (iTemplate::getHtml)
@@ -166,6 +170,16 @@ echo "<h1>";
 //    public function bar();
 //}
 //
+//class f implements a, b {
+//    public function foo()
+//    {
+//    }
+//
+//    public function bar()
+//    {
+//    }
+//}
+//
 //interface c extends a, b
 //{
 //    public function baz();
@@ -191,18 +205,18 @@ echo "<h1>";
 
 //interface a
 //{
-//    const b = 'Константа интерфейса';
+//    const MY_CONST = 3.14;
 //}
 //
 //// Выведет: Константа интерфейса
-//echo a::b;
+//echo a::MY_CONST;
 //
 //
 //// Вот это, однако, не будет работать, так как
 //// константы перекрывать нельзя.
 //class b implements a
 //{
-//    const b = 'Class constant';
+//    const MY_CONST = 3.1415;
 //}
 
 
@@ -210,6 +224,7 @@ echo "<h1>";
 
 
 //trait Hello {
+//    public $test = 123;
 //    public function sayHello() {
 //        echo 'Hello ';
 //    }
@@ -232,7 +247,6 @@ echo "<h1>";
 //$o->sayHello();
 //$o->sayWorld();
 //$o->sayExclamationMark();
-
 
 
 //trait Hello {
